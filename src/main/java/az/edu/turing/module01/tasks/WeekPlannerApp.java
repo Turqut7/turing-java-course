@@ -5,21 +5,7 @@ import java.util.Scanner;
 public class WeekPlannerApp {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String[][] schedule = new String[7][2];
-        schedule[0][0] = "Sunday";
-        schedule[0][1] = "do home work";
-        schedule[1][0] = "Monday";
-        schedule[1][1] = "go to courses; watch a film";
-        schedule[2][0] = "Tuesday";
-        schedule[2][1] = "read a book; exercise";
-        schedule[3][0] = "Wednesday";
-        schedule[3][1] = "go to the gym; play tennis";
-        schedule[4][0] = "Thursday";
-        schedule[4][1] = "practice coding; go for a walk";
-        schedule[5][0] = "Friday";
-        schedule[5][1] = "write a report; attend a meeting";
-        schedule[6][0] = "Saturday";
-        schedule[6][1] = "clean the house; make dinner";
+        String[][] schedule = initializeSchedule();
         while (true) {
             System.out.println("Please, input the day of the week : ");
             String weekDay = scanner.nextLine().trim().toLowerCase();
@@ -53,5 +39,24 @@ public class WeekPlannerApp {
                     System.out.println("Sorry, I don't understand you, please try again.");
             }
         }
+    }
+
+    public static String[][] initializeSchedule() {
+        String[][] schedule = new String[7][2];
+        schedule[0][0] = "Sunday";
+        schedule[0][1] = "do home work";
+        schedule[1][0] = "Monday";
+        schedule[1][1] = "go to courses; watch a film";
+        schedule[2][0] = "Tuesday";
+        schedule[2][1] = "read a book; exercise";
+        schedule[3][0] = "Wednesday";
+        schedule[3][1] = "go to the gym; play tennis";
+        schedule[4][0] = "Thursday";
+        schedule[4][1] = "practice coding; go for a walk";
+        schedule[5][0] = "Friday";
+        schedule[5][1] = "write a report; attend a meeting";
+        schedule[6][0] = "Saturday";
+        schedule[6][1] = "clean the house; make dinner";
+        return schedule;
     }
 }

@@ -5,15 +5,15 @@ import java.util.Scanner;
 
 public class ShipBattleApp {
     public static void main(String[] args) {
-        char[][] square = new char[5][5];
+        char[][] square = initializeSquare();
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 5; j++) {
                 square[i][j] = '-';
             }
         }
         Random random = new Random();
-        int targetR = random.nextInt(5);
-        int targetC = random.nextInt(5);
+        int targetRow = random.nextInt(5);
+        int targetColumn = random.nextInt(5);
         Scanner scanner = new Scanner(System.in);
         System.out.println("All set. Get ready to rumble!");
         while (true) {
@@ -21,7 +21,7 @@ public class ShipBattleApp {
             int c = getInput(scanner, "Enter column (1-5): ") - 1;
             if (square[r][c] == '*') {
                 System.out.println("You already shot here. Try a different spot.");
-            } else if (r == targetR && c == targetC) {
+            } else if (r == targetRow && c == targetColumn) {
                 square[r][c] = 'x';
                 printSquare(square);
                 System.out.println("You have won!");
@@ -32,6 +32,16 @@ public class ShipBattleApp {
             }
         }
         scanner.close();
+    }
+
+    public static char[][] initializeSquare() {
+        char[][] square = new char[5][5];
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                square[i][j] = '-';
+            }
+        }
+        return square;
     }
 
     public static int getInput(Scanner scanner, String text) {

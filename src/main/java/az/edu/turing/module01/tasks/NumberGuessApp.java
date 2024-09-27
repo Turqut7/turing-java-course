@@ -17,8 +17,7 @@ public class NumberGuessApp {
         while (true) {
             System.out.print("Guess a number between 0 and 100: ");
             int userGuess = scanner.nextInt();
-            guesses[attempts] = userGuess;
-            attempts++;
+            guesses[attempts++] = userGuess;
             if (userGuess == secretNumber) {
                 System.out.println("Congratulations, " + name + "!");
                 break;
@@ -28,6 +27,12 @@ public class NumberGuessApp {
                 System.out.println("Your number is too big. Please, try again.");
             }
         }
+
+        printSortedGuesses(guesses, attempts);
+        scanner.close();
+    }
+
+    public static void printSortedGuesses(int[] guesses, int attempts) {
         int[] finalGuesses = Arrays.copyOf(guesses, attempts);
         Arrays.sort(finalGuesses);
         System.out.print("Your numbers: ");
@@ -35,6 +40,5 @@ public class NumberGuessApp {
             System.out.print(finalGuesses[i] + " ");
         }
         System.out.println();
-        scanner.close();
     }
 }

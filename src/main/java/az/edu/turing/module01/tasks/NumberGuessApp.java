@@ -28,11 +28,11 @@ public class NumberGuessApp {
             }
         }
 
-        printSortedGuesses(guesses, attempts);
+        sortAndPrintGuesses(guesses, attempts);
         scanner.close();
     }
 
-    public static void printSortedGuesses(int[] guesses, int attempts) {
+    public static void sortAndPrintGuesses(int[] guesses, int attempts) {
         int[] finalGuesses = Arrays.copyOf(guesses, attempts);
         Arrays.sort(finalGuesses);
         System.out.print("Your numbers: ");

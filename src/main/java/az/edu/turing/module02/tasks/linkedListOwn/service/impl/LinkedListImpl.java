@@ -130,13 +130,13 @@ public class LinkedListImpl<T> implements LinkedListInterface<T> {
     }
 
     @Override
-    public void delete(T item) {
-        if (head == null) {
-            return;
+    public boolean delete(T item) {
+        if (item == null || head == null) {
+            return false;
         }
         if (head.data.equals(item)) {
             removeHead();
-            return;
+            return true;
         }
         Node<T> current = head;
         while (current.next != null && !current.next.data.equals(item)) {
@@ -145,7 +145,9 @@ public class LinkedListImpl<T> implements LinkedListInterface<T> {
         if (current.next != null) {
             current.next = current.next.next;
             size--;
+            return true;
         }
+        return false;
     }
 
     @Override
@@ -156,8 +158,8 @@ public class LinkedListImpl<T> implements LinkedListInterface<T> {
     }
 
     @Override
-    public T[] toArray() {
-        T[] array = (T[]) new Object[size];
+    public Object[] toArray() {
+        Object[] array = new Object[size];
         Node<T> current = head;
         for (int i = 0; i < size; i++) {
             array[i] = current.data;

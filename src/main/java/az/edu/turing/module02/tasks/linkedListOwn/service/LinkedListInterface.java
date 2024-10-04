@@ -15,11 +15,11 @@ public interface LinkedListInterface<T> {
 
     void delete(int index);
 
-    void delete(T item);
+    boolean delete(T item);
 
     void deleteAll();
 
-    T[] toArray();
+    Object[] toArray();
 
     String toString();
 }

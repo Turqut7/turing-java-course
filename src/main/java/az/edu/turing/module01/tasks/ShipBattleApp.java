@@ -6,11 +6,6 @@ import java.util.Scanner;
 public class ShipBattleApp {
     public static void main(String[] args) {
         char[][] square = initializeSquare();
-        for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < 5; j++) {
-                square[i][j] = '-';
-            }
-        }
         Random random = new Random();
         int targetRow = random.nextInt(5);
         int targetColumn = random.nextInt(5);

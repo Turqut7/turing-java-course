@@ -3,6 +3,7 @@ package az.edu.turing.module02.tasks;
 import java.util.Arrays;
 
 public class MergeSortedArrayApp {
+
     public static void main(String[] args) {
         int[] array1 = {1, 4, 5, 8, 15, 20};
         int[] array2 = {2, 3, 6, 7, 13};

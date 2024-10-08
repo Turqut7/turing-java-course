@@ -1,7 +1,8 @@
 package az.edu.turing.module02.tasks.linkedListOwn.service;
 
 public interface LinkedListInterface<T> {
-    void addHead(T item);
+
+    T addHead(T item);
 
     void addTail(T item);
 

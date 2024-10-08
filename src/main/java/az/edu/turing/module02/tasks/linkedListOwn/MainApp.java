@@ -5,6 +5,7 @@ import java.util.Arrays;
 import az.edu.turing.module02.tasks.linkedListOwn.service.impl.LinkedListImpl;
 
 public class MainApp {
+
     public static void main(String[] args) {
         LinkedListImpl<Integer> list = new LinkedListImpl<>();
 

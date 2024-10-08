@@ -4,6 +4,7 @@ import az.edu.turing.module02.tasks.linkedListOwn.model.Node;
 import az.edu.turing.module02.tasks.linkedListOwn.service.LinkedListInterface;
 
 public class LinkedListImpl<T> implements LinkedListInterface<T> {
+
     public Node<T> head;
     public Node<T> tail;
     private int size;
@@ -15,7 +16,7 @@ public class LinkedListImpl<T> implements LinkedListInterface<T> {
     }
 
     @Override
-    public void addHead(T item) {
+    public T addHead(T item) {
         Node<T> newNode = new Node<>(item);
         if (head == null) {
             head = newNode;
@@ -25,6 +26,7 @@ public class LinkedListImpl<T> implements LinkedListInterface<T> {
             head = newNode;
         }
         size++;
+        return item;
     }
 
     @Override

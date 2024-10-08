@@ -9,12 +9,6 @@ public class LinkedListImpl<T> implements LinkedListInterface<T> {
     public Node<T> tail;
     private int size;
 
-    public LinkedListImpl() {
-        this.head = null;
-        this.tail = null;
-        this.size = 0;
-    }
-
     @Override
     public T addHead(T item) {
         Node<T> newNode = new Node<>(item);
